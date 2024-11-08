@@ -1,10 +1,10 @@
-:root{
+:root {
     --primary-color: #F0F0F0;
 
     --primary-bg-color: #111217;
     --secondary-bg-color: #282925;
     --border-color: #28292E;
-    
+
     --title-color: #f0f0f0;
     --text-color: #9A9A9C;
     --link-color: #9A9A9C;
@@ -24,7 +24,7 @@
     --icon-color: #56575A;
 } */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,18 +32,20 @@
     list-style: none;
 }
 
-body{
+body {
     background: var(--primary-bg-color);
-    font-family: 'Inter',  sans-serif;
+    font-family: 'Inter', sans-serif;
 }
-i{
+
+i {
     color: var(--icon-color);
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-.header{
+.header {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -52,29 +54,40 @@ a{
     padding: 0.5rem 1rem;
 }
 
-.header__brand .brand__logo{
-    width: 3.25rem;
-    height: 3.25rem;
+.header__brand .brand__logo {
+    width: 4rem;
+    height: 4rem;
 }
-#toggleTheme{
-    font-size: 1.5rem;
+
+.brand__logo {
+    border-radius: 50%;
 }
-.menu{
+
+#toggleTheme {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.menu {
     display: flex;
     align-items: center;
-    background: var( --primary-bg-color);
+    background: var(--primary-bg-color);
+    border-bottom: 1px solid var(--border-color);
 }
-.menu__item{
+
+.menu__item {
     width: 100vh;
 }
-.menu--mobile{
-    width: 100vh;
+
+.menu--mobile {
+    width: 100vw;
     position: fixed;
     bottom: 0;
     justify-content: space-between;
     border-top: 1px solid var(--border-color);
 }
-.menu--mobile .menu__link{
+
+.menu--mobile .menu__link {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,18 +96,29 @@ a{
     gap: .5rem;
 
 }
-.menu__link.active .menu__icon, 
-.menu__link.active .menu__item{
+
+.menu__link.active .menu__icon,
+.menu__link.active .menu__text {
     color: var(--primary-color);
     font-weight: 600;
 }
-.menu__icon, .menu__text{
+
+.menu__icon,
+.menu__text {
     color: var(--text-color);
 }
-.menu__icon{
+
+.menu__icon {
     font-size: 1.5rem;
 }
-.menu__text{
+
+.menu__text {
     font-size: .75rem;
     text-transform: uppercase;
+}
+
+@media (min-width: 768px){
+    .menu--mobile{
+        display: none;
+    }
 }
